@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2> New York City Historical Figures Database </h2>
+    <ul>
+      <% @figures.each do |figure| %>
+        <a href='/figures/<%= figure.id %>'> <li> <%= figure.name %> </li> </a>
+      <% end %>
+    </ul>
+    <br>
+    <a href='/figures/new'> Add a new figure </a>
+
+
+  </body>
+</html>

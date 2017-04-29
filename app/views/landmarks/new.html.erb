@@ -7,22 +7,14 @@
   <body>
     <h2> Add a historical landmark to the database </h2>
 
-    <form action='/landmarks/' method="post">
+    <form action='/landmarks' method="post">
       <label for="landmark_name"> Landmark name: </label><br>
       <input type="text" name="landmark[name]" id="landmark_name"><br>
       <br>
       <label for="landmark_year_completed"> Year completed: </label><br>
       <input type="text" name="landmark[year_completed]" id="landmark_year_completed"><br>
       <br>
-      <label for="landmark_figure"> Associated historical figure: </label><br>
-      <select name="landmark[figure_id]" id="landmark_figure">
-        <% @figures.each do |figure| %>
-          <option value="<%= figure.id %>"> <%= figure.name %> </option>
-        <% end %>
-      </select>
-      <br>
-      <br>
-      <button type="submit"> submit </button>
+      <button type="submit"> Create New Landmark </button>
 
 
     </form>

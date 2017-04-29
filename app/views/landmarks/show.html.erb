@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Year Completed</th>
+        <!-- <th>Associated Historical Figure</th> -->
+      </tr>
+      <tr>
+        <td><%= @landmark.name %></td>
+        <td><%= @landmark.year_completed %></td>
+      </tr>
+    <table>
+    <br>
+    <a href="/landmarks/<%= @landmark.id %>/edit"> Edit this landmark </a> <br>
+    <br>
+    <a href="/landmarks"> Back to all landmarks </a>
+  </body>
+</html>

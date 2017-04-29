@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
   register Sinatra::Twitter::Bootstrap::Assets
 
   get '/' do
-    redirect to ('/landmarks/')
+    redirect to ('/landmarks')
   end
 
 

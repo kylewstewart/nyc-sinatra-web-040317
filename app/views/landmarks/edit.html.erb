@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2> Edit a landmark </h2>
+    <form action='/landmarks/<%= @landmark.id %>' method="post">
+      <input type="hidden" name="_method" value="PATCH"/>
+      <label for="landmark_name"> Landmark name: </label><br>
+      <input type="text" name="landmark[name]" value="<%= @landmark.name %>" id="landmark_name"><br>
+      <br>
+      <label for="landmark_year_completed"> Year completed: </label><br>
+      <input type="text" name="landmark[year_completed]" value="<%= @landmark.year_completed %>" id="landmark_year_completed"><br>
+      <br>
+      <br>
+      <button type="submit"> Edit Landmark </button><br>
+      <br>
+      <form action='/landmarks/<%= @landmark.id %>' method="post">
+      <input type="hidden" name="_method" value="delete"/>
+      <button type="submit"> Delete Landmark </button>
+      </form>
+
+  </body>
+</html>
+
+
+<!-- <label for="landmark_figure"> Associated historical figure: </label><br>
+<select name="landmark[figure_id]" id="landmark_figure">
+  <% @figures.each do |figure| %>
+    <option value="<%= figure.id %>"> <%= figure.name %> </option>
+  <% end %>
+</select>

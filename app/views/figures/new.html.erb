@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h2> Add a historical figure to the database </h2>
+
+    <form action='/figures' method="post">
+      <label for="figure_name"> Name: </label><br>
+      <input type="text" name="figure[name]" id="figure_name"><br>
+      <br>
+      <label for="titles_checkbox"> Titles: </label><br>
+      <input type="hidden" name="figure[title_ids][]" value="x">
+      <% @titles.each do |title| %>
+        <input type="checkbox" name="figure[title_ids][]" value="<%= title.id %>" id="title_checkbox"> <%= title.name %> <br>
+      <% end %>
+      <br>
+      <label for="title_name"> Add A Title: </label> <br>
+      <label for="title_name"> Name: </label>
+      <input type="text" name="title[name]" id="title_name"><br>
+      <br>
+
+      <label for="landmark_id"> Associated Landmarks: </label><br>
+      <input type="hidden" name="figure[landmark_ids][]" value="x">
+      <% @landmarks.each do |landmark| %>
+        <input type="checkbox" name="figure[landmark_ids][]" value="<%= landmark.id %>" id="landmark_id"> <%= landmark.name %> <br>
+      <% end %>
+      <br>
+      <label for="landmark_name"> Add A Landmark: </label> <br>
+      <label for="landmark_name"> Name: </label>
+      <input type="text" name="landmark[name]" id="landmark_name">
+      <label for="landmark_year_completed"> Year Completed: </label>
+      <input type="text" name="landmark[year_completed]" id="landmark_year_completed"><br>
+      <br>
+      <br>
+      <button type="submit"> Create New Figure </button>
+    </form>
+
+  </body>
+</html>

@@ -8,7 +8,7 @@
     <h2> New York City Historical Landmark Database </h2>
     <ul>
       <% @landmarks.each do |landmark| %>
-        <a href='/landmarks/<%= landmark.id %>'> <li> <%= landmark.name %> </li> </a>
+        <a href='/landmarks/<%= landmark.id %>'> <li> <%= landmark.name %>, <%= landmark.year_completed %> </li> </a>
       <% end %>
     </ul>
     <br>
