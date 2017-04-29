@@ -51,7 +51,7 @@ describe FiguresController do
    it "allows you to create a new figure with a new title" do
     visit '/figures/new'
     fill_in :figure_name, :with => "Doctor Who"
-    fill_in :new_title, :with => "Time Lord"
+    fill_in :title_name, :with => "Time Lord"
     click_button "Create New Figure"
     figure = Figure.last
     title = Title.last
@@ -64,7 +64,7 @@ describe FiguresController do
   it "allows you to create a new figure with a new landmark" do
     visit '/figures/new'
     fill_in :figure_name, :with => "Doctor Who"
-    fill_in :new_landmark, :with => "The Tardis"
+    fill_in :landmark_name, :with => "The Tardis"
     click_button "Create New Figure"
     figure = Figure.last
     landmark = Landmark.last
@@ -106,7 +106,7 @@ describe FiguresController do
     @figure = Figure.first
     visit "/figures/#{@figure.id}/edit"
     fill_in :figure_name, with: "Missy"
-    fill_in :new_landmark, with: "Big Tower"
+    fill_in :landmark_name, with: "Big Tower"
     click_button "Edit Figure"
     @figure = Figure.first
     expect(page.current_path).to eq("/figures/#{@figure.id}")

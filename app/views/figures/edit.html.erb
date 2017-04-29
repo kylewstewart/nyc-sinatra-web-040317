@@ -14,33 +14,27 @@
       <br>
       <label for="titles_checkbox"> Titles: </label><br>
       <input type="hidden" name="figure[title_ids][]" value="x">
-
-
       <% @titles.each do |title| %>
-        <% if @figure_titles.include?(title.id) %>
+        <% if @figure_title_ids.include?(title.id) %>
           <input type="checkbox" name="figure[title_ids][]" value="<%= title.id %>" id="title_<%= title.id %>" checked> <%= title.name %> <br>
         <% else %>
           <input type="checkbox" name="figure[title_ids][]" value="<%= title.id %>" id="title_<%= title.id %>"> <%= title.name %> <br>
         <% end %>
       <% end %>
-
-
-
-
-
-
-
-
-
       <br>
       <label for="title_name"> Add A Title: </label> <br>
       <label for="title_name"> Name: </label>
       <input type="text" name="title[name]" id="title_name"><br>
+
       <br>
       <label for="landmark_id"> Associated Landmarks: </label><br>
       <input type="hidden" name="figure[landmark_ids][]" value="x">
       <% @landmarks.each do |landmark| %>
-        <input type="checkbox" name="figure[landmark_ids][]" value="<%= landmark.id %>" id="landmark_<%= landmark.id %>"> <%= landmark.name %> <br>
+        <% if @figure_landmarks.include?(landmark) %>
+          <input type="checkbox" name="figure[landmark_ids][]" value="<%= landmark.id %>" id="landmark_<%= landmark.id %>" checked> <%= landmark.name %> <br>
+        <% else %>
+          <input type="checkbox" name="figure[landmark_ids][]" value="<%= landmark.id %>" id="landmark_<%= landmark.id %>"> <%= landmark.name %> <br>
+        <% end %>
       <% end %>
       <br>
       <label for="landmark_name"> Add A Landmark: </label> <br>
