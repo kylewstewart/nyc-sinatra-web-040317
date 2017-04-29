@@ -5,6 +5,32 @@
     <title></title>
   </head>
   <body>
-    
+    <h2> New York City Historical Figure </h2>
+    <h3> <%= @figure.name %> </h3>
+    <h4> Titles: </h4>
+    <ul>
+    <% @titles.each do |title| %>
+      <li> <%= title.name %> </li>
+    <% end %>
+    </ul>
+    <h4> Landmarks: </h4>
+    <ul>
+    <% @landmarks.each do |landmark| %>
+      <li> <%= landmark.name %> </li>
+    <% end %>
+    </ul>
+    <br>
+    <form action='/figures/<%= @figure.id %>/edit' method="get">
+      <button type="submit"> Edit <%= @figure.name %> </button>
+    </form>
+    <br>
+    <form action='/figures/<%= @figure.id %>' method="post">
+      <input type="hidden" name="_method" value="delete"/>
+      <button type="submit"> Delete <%= @figure.name %> </button>
+    </form>
+    <br>
+    <a href='/figures'> Go Back to All Historical Figures </a> <br>
+    <br>
+    <a href="/landmarks"> Go to Historic Landmarks </a>
   </body>
 </html>

@@ -5,7 +5,7 @@
     <title></title>
   </head>
   <body>
-    <h2> Edit a landmark </h2>
+    <h2> Edit a Historic Landmark </h2>
     <form action='/landmarks/<%= @landmark.id %>' method="post">
       <input type="hidden" name="_method" value="PATCH"/>
       <label for="landmark_name"> Landmark name: </label><br>
@@ -21,7 +21,11 @@
       <input type="hidden" name="_method" value="delete"/>
       <button type="submit"> Delete Landmark </button>
       </form>
-
+      <br>
+      <br>
+      <a href='/landmarks'> Go Back to Historic Landmarks </a> <br>
+      <br>
+      <a href='/figures'> Go to Historic Figures </a>
   </body>
 </html>
 

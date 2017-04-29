@@ -11,9 +11,12 @@
         <a href='/landmarks/<%= landmark.id %>'> <li> <%= landmark.name %>, <%= landmark.year_completed %> </li> </a>
       <% end %>
     </ul>
+    <!-- <a href='/landmarks/new'> Add a new landmark </a><br> -->
+    <form action="/landmarks/new" method="get">
+      <button type="submit"> Add a New Historical Landmark </button>
+    </form>
     <br>
-    <a href='/landmarks/new'> Add a new landmark </a>
-
-
+    <br>
+    <a href='/figures'> Go to Historical Figures </a>
   </body>
 </html>

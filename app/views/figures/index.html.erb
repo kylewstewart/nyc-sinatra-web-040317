@@ -11,8 +11,13 @@
         <a href='/figures/<%= figure.id %>'> <li> <%= figure.name %> </li> </a>
       <% end %>
     </ul>
+    <!-- <a href='/figures/new'> Add a new figure </a> -->
+    <form action="/figures/new" method="get">
+      <button type="submit"> Add a New Historical Figure </button>
+    </form>
     <br>
-    <a href='/figures/new'> Add a new figure </a>
+    <br>
+    <a href='/landmarks'> Go to Historical Landmarks <a>
 
 
   </body>
